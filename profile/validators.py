@@ -20,10 +20,3 @@ def year(value):
     if not (1000 <= value <= 9999):
         raise ValidationError('%f is not a valid year, year should be 4 digits' % value)
 
-
-def min_length(min):
-    def validator(value):
-        if len(value) < min:
-            raise ValidationError('%s should be at least %d characters' % (value, min))
-
-    return validator

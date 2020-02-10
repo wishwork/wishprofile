@@ -5,7 +5,7 @@ from profile import validators
 
 class Recommendation(models.Model):
     relationship = models.ForeignKey(to='profile.Relationship', null=True, on_delete=models.SET_NULL)
-    comment = models.TextField(max_length=2000, validators=[validators.min_length(30)])
+    comment = models.TextField(max_length=2000)
     link = models.ForeignKey(to='profile.Link', null=True, on_delete=models.SET_NULL)
     profile = models.ForeignKey(to='profile.Profile',
                                 on_delete=models.CASCADE,
