@@ -14,6 +14,7 @@ class Media(models.Model):
         (IMAGE, 'image'),
         (VIDEO, 'video'),
     )
+    album = models.ForeignKey(to='profile.Album', on_delete=models.CASCADE)
     title = models.CharField(max_length=127)
     caption = models.TextField(max_length=1000, null=True)
     file = models.FileField(upload_to=file_upload_location)
